@@ -6,6 +6,7 @@ import GenerateQuiz from './components/GenerateQuiz';
 import PlayQuiz from './components/PlayQuiz';
 import EnterQuizId from './components/EnterQuizId';
 import CreateQuiz from './components/CreateQuiz';
+import QuizSummary from './components/QuizSummary'; // Re-add the QuizSummary component
 import Header from './components/Header';
 import './index.css';
 
@@ -29,7 +30,7 @@ const App = () => {
 
   return (
     <Router>
-      <div className={`App ${theme}`}>
+      <div className={`App ${theme} max-page-height`}>
         <Header toggleTheme={toggleTheme} theme={theme} />
         <main className="flex flex-col items-center justify-center flex-grow min-h-screen pt-16">
           <Routes>
@@ -38,6 +39,7 @@ const App = () => {
             <Route path="/play-quiz/:quizId" element={<PlayQuiz />} />
             <Route path="/enter-quiz-id" element={<EnterQuizId />} />
             <Route path="/create-quiz" element={<CreateQuiz />} />
+            <Route path="/quiz-summary" element={<QuizSummary />} /> {/* Re-added the QuizSummary route */}
           </Routes>
         </main>
       </div>

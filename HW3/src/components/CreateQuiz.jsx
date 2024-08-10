@@ -105,16 +105,12 @@ const CreateQuiz = () => {
             <h3 className="text-lg mb-2 text-gray-800 dark:text-gray-200">Select Questions (Select up to {numberOfQuestions})</h3>
             <ul className="mb-4">
               {availableQuestions.map((question, index) => (
-                <li key={index} className={`border p-2 mb-2 rounded ${selectedQuestions.includes(question) ? 'bg-green-100 dark:bg-green-200' : 'bg-white dark:bg-gray-700'}`}>
-                  <label className="flex items-center">
-                    <input
-                      type="checkbox"
-                      checked={selectedQuestions.includes(question)}
-                      onChange={() => toggleQuestionSelection(question)}
-                      className="mr-2"
-                    />
-                    <span className="text-gray-800 dark:text-gray-200">{question.question}</span>
-                  </label>
+                <li
+                  key={index}
+                  className={`border p-2 mb-2 rounded cursor-pointer ${selectedQuestions.includes(question) ? 'bg-blue-500 text-white' : 'bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200'}`}
+                  onClick={() => toggleQuestionSelection(question)}
+                >
+                  <span>{question.question}</span>
                 </li>
               ))}
             </ul>
